@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme {
+  /* Premium Palette */
+  --color-brand-gold: #C5A059;      /* Muted Gold */
+  --color-brand-cream: #F9F8F3;     /* Warm Alabaster */
+  --color-brand-slate: #1A1C1E;     /* Soft Premium Charcoal */
+  --color-brand-accent: #E8DCC4;    /* Champagne */
+
+  --animate-infinite-scroll: infinite-scroll 40s linear infinite;
+
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-100%); }
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-slate);
+  @apply antialiased;
+}
