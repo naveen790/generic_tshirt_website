@@ -21,7 +21,7 @@ export const PRODUCTS = [
     id: 2, 
     name: "Oversized Streetwear Hoodie", 
     category: "Hoodie", 
-    image: "/products/hoodie-grey.jpg", 
+    image: "/products/mens-hoodies.jpg", 
     details: "400 GSM Heavyweight French Terry. Drop-shoulder design with a double-lined hood and no drawstrings for a minimalist look." 
   },
   { 
@@ -35,7 +35,7 @@ export const PRODUCTS = [
     id: 4, 
     name: "Premium Pullover", 
     category: "Hoodie", 
-    image: "/products/hoodie-grey.jpg", 
+    image: "/products/womens-grey-pullover.jpg", 
     details: "80% Cotton / 20% Polyester blend for durability and low shrinkage. Custom dyed to Nyio Corp standards." 
   }
 ];
