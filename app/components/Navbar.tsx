@@ -1,19 +1,28 @@
 'use client';
+import Link from 'next/link';
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-6 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-[9999]">
-      <div className="bg-white/80 backdrop-blur-xl border border-brand-gold/20 px-10 py-5 rounded-full flex justify-between items-center shadow-[0_20px_50px_rgba(197,160,89,0.1)]">
-        <div className="text-2xl font-serif tracking-tighter text-brand-slate uppercase italic">
+    <nav className="fixed top-8 left-1/2 -translate-x-1/2 w-[90%] max-w-6xl z-[9999]">
+      <div className="bg-white/70 backdrop-blur-2xl border border-brand-gold/10 px-8 md:px-12 py-5 rounded-full flex justify-between items-center shadow-premium transition-all duration-500">
+        
+        {/* Logo Branding */}
+        <div className="font-heading text-xl md:text-2xl tracking-tighter text-brand-slate italic">
           Nyio <span className="text-brand-gold not-italic font-light">Corp.</span>
         </div>
         
-        <div className="flex gap-10">
+        {/* Navigation Links */}
+        <div className="flex gap-8 md:gap-12">
           {['About', 'Gallery', 'Contact'].map((item) => (
-            <a key={item} href={`#${item.toLowerCase()}`} 
-               className="text-[10px] uppercase tracking-[0.4em] font-semibold text-zinc-500 hover:text-brand-gold transition-all">
+            <Link 
+              key={item} 
+              href={`#${item.toLowerCase()}`} 
+              className="relative text-[9px] md:text-[10px] uppercase tracking-[0.5em] font-bold text-zinc-400 hover:text-brand-gold transition-colors duration-300 group"
+            >
               {item}
-            </a>
+              {/* Animated underline effect */}
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-brand-gold transition-all duration-300 group-hover:width-full group-hover:w-full"></span>
+            </Link>
           ))}
         </div>
       </div>

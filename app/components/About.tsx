@@ -1,43 +1,93 @@
+'use client';
+import { motion } from 'framer-motion';
+
 export default function About() {
   return (
-    <section id="about" className="bg-[#0A0A0A] py-32 px-6">
+    <section id="about" className="bg-brand-cream py-32 px-6">
       <div className="max-w-6xl mx-auto">
-        {/* Core Experience */}
-        <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
-          <div>
-            <h2 className="text-4xl md:text-5xl font-serif text-white mb-8 leading-tight">
+        
+        {/* Core Experience Section */}
+        <div className="grid md:grid-cols-2 gap-20 items-center mb-32">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="text-brand-gold text-[10px] uppercase tracking-[0.6em] font-bold block mb-6">
+              Our Legacy
+            </span>
+            <h2 className="font-heading italic text-brand-slate mb-8 leading-tight">
               15 Years of <br />Manufacturing Mastery.
             </h2>
-            <p className="text-zinc-400 leading-relaxed mb-6">
-              Nyio Corp is a specialized apparel sourcing agent with a deep focus on high-quality T-shirt and Hoodie production. For over a decade and a half, we have bridged the gap between global retailers and specialized manufacturing hubs.
+            <p className="text-zinc-600 leading-relaxed mb-8 font-body">
+              Nyio Corp is a specialized apparel sourcing agent with a deep focus on high-quality production. For over a decade, we have bridged the gap between global retailers and specialized manufacturing hubs in Tiruppur.
             </p>
-            <p className="text-zinc-500 text-sm italic">
-              "We don't just source; we manage the lifecycle of the garment from yarn selection to final retail distribution."
-            </p>
-          </div>
-          <div className="relative aspect-video bg-zinc-900 overflow-hidden rounded-sm">
-             {/* Placeholder for factory image */}
-             <img src="/factory-floor.jpg" alt="Nyio Corp Factory" className="w-full h-full object-cover grayscale opacity-60" />
-          </div>
+            <div className="border-l-2 border-brand-gold pl-6 py-2">
+              <p className="text-brand-slate/60 text-sm italic font-heading">
+                "We don't just source; we manage the lifecycle of the garment from yarn selection to final retail distribution."
+              </p>
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="relative aspect-[4/5] md:aspect-square bg-white shadow-premium overflow-hidden border-8 border-white"
+          >
+             {/* Note: Ensure this image exists in your public folder or use a placeholder */}
+             <img 
+               src="/factory-floor.jpg" 
+               alt="Nyio Corp Factory" 
+               className="w-full h-full object-cover transition-transform duration-[3s] hover:scale-110" 
+             />
+             <div className="absolute inset-0 bg-brand-slate/5"></div>
+          </motion.div>
         </div>
 
         {/* Vision & Values Cards */}
-        <div id="vision" className="grid md:grid-cols-3 gap-1">
-          <div className="bg-zinc-900/50 p-12 border border-white/5">
-            <span className="text-zinc-600 text-[10px] uppercase tracking-widest mb-4 block">01. Vision</span>
-            <h3 className="text-xl text-white font-serif mb-4">Precision Sourcing</h3>
-            <p className="text-zinc-500 text-sm">To redefine apparel supply chains through absolute transparency and uncompromising quality control.</p>
-          </div>
-          <div className="bg-zinc-900/50 p-12 border border-white/5">
-            <span className="text-zinc-600 text-[10px] uppercase tracking-widest mb-4 block">02. Punctuality</span>
-            <h3 className="text-xl text-white font-serif mb-4">On-Time, Every Time</h3>
-            <p className="text-zinc-500 text-sm">We value time as much as fabric. Our logistics network ensures deadline compliance for 500k+ unit orders.</p>
-          </div>
-          <div className="bg-zinc-900/50 p-12 border border-white/5">
-            <span className="text-zinc-600 text-[10px] uppercase tracking-widest mb-4 block">03. Quality</span>
-            <h3 className="text-xl text-white font-serif mb-4">Highest Standards</h3>
-            <p className="text-zinc-500 text-sm">Working with multiple certified factories, we implement rigorous AQL standards at every production stage.</p>
-          </div>
+        <div id="vision" className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              id: "01",
+              title: "Precision Sourcing",
+              desc: "Redefining supply chains through absolute transparency and uncompromising quality control.",
+              label: "Vision"
+            },
+            {
+              id: "02",
+              title: "On-Time Delivery",
+              desc: "We value time as much as fabric. Our network ensures deadline compliance for high-volume orders.",
+              label: "Punctuality"
+            },
+            {
+              id: "03",
+              title: "AQL Standards",
+              desc: "Implementing rigorous inspection at every stage, from greige fabric to final packaging.",
+              label: "Quality"
+            }
+          ].map((item, index) => (
+            <motion.div 
+              key={item.id}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              className="card-surface p-12 group hover:border-brand-gold/30 transition-all"
+            >
+              <span className="text-brand-gold text-[10px] uppercase tracking-[0.4em] mb-6 block font-bold">
+                {item.id}. {item.label}
+              </span>
+              <h3 className="font-heading italic text-brand-slate mb-4 group-hover:text-brand-gold transition-colors">
+                {item.title}
+              </h3>
+              <p className="text-zinc-500 text-sm leading-relaxed font-body">
+                {item.desc}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
