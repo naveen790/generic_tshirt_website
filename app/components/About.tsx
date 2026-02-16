@@ -67,7 +67,7 @@ export default function About() {
             }
           ].map((item, index) => (
             <motion.div 
-              key={item.id}
+              key={index}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -75,7 +75,7 @@ export default function About() {
               className="card-surface p-12 group hover:border-brand-gold/30 transition-all"
             >
               <span className="text-brand-gold text-[10px] uppercase tracking-[0.4em] mb-6 block font-bold">
-                {item.id}. {item.label}
+                {item.label}
               </span>
               <h3 className="font-heading italic text-brand-slate mb-4 group-hover:text-brand-gold transition-colors">
                 {item.title}
