@@ -29,7 +29,7 @@ export const PRODUCTS = [
     name: "Essential Summer Tee", 
     category: "T-Shirt", 
     image: "/products/tee-white.jpg", 
-    details: "160 GSM Lightweight Jersey. Breathable, soft-wash finish ideal for high-volume retail distribution." 
+    details: "160 GSM Lightweight. Breathable, soft-wash finish ideal for high-volume retail distribution." 
   },
   { 
     id: 4, 

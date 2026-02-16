@@ -4,6 +4,7 @@ import Logos from './components/Logos';
 import About from './components/About';
 import Gallery from './components/Gallery';
 import Contact from './components/Contact';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <Gallery />
         <Logos />
         <Contact />
+        <Footer />
       </main>
     </>
   );

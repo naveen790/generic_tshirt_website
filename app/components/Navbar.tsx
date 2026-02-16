@@ -8,7 +8,7 @@ export default function Navbar() {
         
         {/* Logo Branding */}
         <div className="font-heading text-xl md:text-2xl tracking-tighter text-brand-slate italic">
-          Nyio <span className="text-brand-gold not-italic font-light">Corp.</span>
+          Nyio <span className="text-brand-gold not-italic font-light">Corp</span>
         </div>
         
         {/* Navigation Links */}

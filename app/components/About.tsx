@@ -51,21 +51,18 @@ export default function About() {
         <div id="vision" className="grid md:grid-cols-3 gap-8">
           {[
             {
-              id: "01",
               title: "Precision Sourcing",
-              desc: "Redefining supply chains through absolute transparency and uncompromising quality control.",
+              desc: "We build clear and honest supply chains that turn your creative designs into high-quality products at any scale.",
               label: "Vision"
             },
             {
-              id: "02",
               title: "On-Time Delivery",
-              desc: "We value time as much as fabric. Our network ensures deadline compliance for high-volume orders.",
+              desc: "We respect your deadlines as much as the quality of our fabric. Our team ensures every order arrives exactly when promised.",
               label: "Punctuality"
             },
             {
-              id: "03",
-              title: "AQL Standards",
-              desc: "Implementing rigorous inspection at every stage, from greige fabric to final packaging.",
+              title: "Total Quality Control",
+              desc: "From the first thread to the final package, we inspect every detail to make sure every garment is perfect.",
               label: "Quality"
             }
           ].map((item, index) => (
